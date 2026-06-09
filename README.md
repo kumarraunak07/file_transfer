@@ -27,10 +27,3 @@ Open the printed `http://localhost:4173` URL on the sending device. For phone te
 - Transfers are single-file actions, though multiple files can be selected and sent one at a time.
 - Resuming partial files after a dropped connection is not yet implemented.
 
-## Recommended next milestones
-
-- Add TURN relay support for restricted networks.
-- Add resumable chunk manifests for interrupted transfers.
-- Package the web client as installable desktop/mobile shells after validating demand.
-- Add automated browser tests for pairing, accept/decline, and transfer progress.
-- Add dependency scanning and security review gates before public release.
