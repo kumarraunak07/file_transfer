@@ -18,7 +18,7 @@ npm install
 npm start
 ```
 
-Open the printed `http://localhost:4173` URL on the sending device. For phone testing, use the printed LAN URL, and make sure both devices are on the same network.
+Open the printed `http://localhost:'port'` URL on the sending device. For phone testing, use the printed LAN URL, and make sure both devices are on the same network.
 
 ## MVP boundaries
 
