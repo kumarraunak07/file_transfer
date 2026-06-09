@@ -1,0 +1,21 @@
+{
+  "name": "seamless-file-transfer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser-first cross-device file transfer MVP with QR pairing, WebRTC transfer, and local transfer history.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "jszip": "^3.10.1",
+    "qrcode": "^1.5.4",
+    "ws": "^8.17.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

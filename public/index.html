@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seamless File Transfer</title>
+    <link rel="stylesheet" href="/styles.css?v=10" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Private local-first transfer</p>
+          <h1>Send files between your devices without the usual friction.</h1>
+          <p class="subcopy">
+            Pair with a QR code or link, accept on the receiving device, then transfer directly over an encrypted browser connection.
+          </p>
+        </div>
+        <div class="status-panel" aria-live="polite">
+          <span class="status-dot" id="connectionDot"></span>
+          <span id="connectionState">Ready to start</span>
+        </div>
+      </section>
+
+      <section class="workspace" id="senderView">
+        <div class="transfer-pane">
+          <div class="pane-header">
+            <div>
+              <h2>Send</h2>
+              <p>Create a pairing session on this device.</p>
+            </div>
+            <button class="secondary" id="newRoomButton" type="button">New Pairing</button>
+          </div>
+
+          <div class="pairing-grid">
+            <div class="qr-card">
+              <img id="qrCode" alt="Pairing QR code" />
+              <div class="empty-qr" id="emptyQr">Start a pairing session</div>
+            </div>
+            <div class="pair-details">
+              <label for="pairLink">Pairing link</label>
+              <div class="copy-row">
+                <input id="pairLink" type="text" readonly placeholder="Create a pairing session to generate a link" />
+                <button id="copyLinkButton" class="icon-button" type="button" title="Copy pairing link">Copy</button>
+              </div>
+              <p class="hint" id="roomHint">The receiver scans this code or opens the link on another device.</p>
+            </div>
+          </div>
+
+          <div class="dropzone" id="dropzone">
+            <input id="fileInput" type="file" multiple />
+            <div>
+              <strong>Drop files here</strong>
+              <span>or choose files after the other device connects.</span>
+            </div>
+          </div>
+
+          <div class="file-list" id="fileList"></div>
+        </div>
+
+        <aside class="activity-pane">
+          <h2>Activity</h2>
+          <div id="transferProgress" class="progress-stack"></div>
+          <h3>Local History</h3>
+          <div id="historyList" class="history-list"></div>
+        </aside>
+      </section>
+
+      <section class="workspace receiver hidden" id="receiverView">
+        <div class="transfer-pane">
+          <div class="pane-header">
+            <div>
+              <h2>Receive</h2>
+              <p>Review incoming files before anything downloads.</p>
+            </div>
+          </div>
+          <div id="receivePanel" class="receive-panel">
+            <strong>Connecting to sender...</strong>
+            <span>Keep this tab open while pairing completes.</span>
+          </div>
+        </div>
+        <aside class="activity-pane">
+          <h2>Activity</h2>
+          <div id="receiverProgress" class="progress-stack"></div>
+          <h3>Local History</h3>
+          <div id="receiverHistoryList" class="history-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/vendor/jszip.min.js?v=1"></script>
+    <script type="module" src="/app.js?v=10"></script>
+  </body>
+</html>
